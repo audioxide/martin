@@ -7,7 +7,7 @@ import csv
 
 today = datetime.datetime.now()
 
-print("Today's date is", today.strftime("%A"), today.strftime("%d"), today.strftime("%B,"), today.strftime("%Y,"), "motherfuckers")
+print("Hello. I am Martin the Deficient Virtual Assistant. I have been programmed to say I hope you are well. Today's date is", today.strftime("%A"), today.strftime("%d"), today.strftime("%B,"), today.strftime("%Y"))
 
 # Connect to album data set
 
