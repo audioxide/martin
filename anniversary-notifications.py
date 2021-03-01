@@ -26,4 +26,4 @@ for row in data:
 
 # If count > 0, email a notification containing array 
 
-print("As of today Audioxide has reviewed", total, "albums")
+print("As of today Audioxide has reviewed", total, "albums. I apologise for any distress this information may have caused.")
