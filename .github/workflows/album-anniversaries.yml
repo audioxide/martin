@@ -14,6 +14,6 @@ jobs:
           subject: Audioxide album anniversaries
           to: fred@audioxide.com
           from: Martin the Deficient Virtual Assistant
-          body: Build job of ${{github.repository}} completed successfully!
+          body: Hello. I am Martin the Deficient Virtual Assistant. I have been programmed to say I hope you are well.
           # html_body: file://README.html
           # convert_markdown: true
