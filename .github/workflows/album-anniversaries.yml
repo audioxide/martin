@@ -1,0 +1,15 @@
+- name: Send mail
+  uses: dawidd6/action-send-mail@v3
+  with:
+    connection_url: ${{secrets.MAIL_CONNECTION}}
+    server_address: smtp.gmail.com
+    server_port: 587
+    secure: true
+    username: ${{secrets.MAIL_USERNAME}}
+    password: ${{secrets.MAIL_PASSWORD}}
+    subject: Audioxide album anniversaries
+    to: fred@audioxide.com
+    from: Martin the Deficient Virtual Assistant
+    body: Build job of ${{github.repository}} completed successfully!
+    # html_body: file://README.html
+    # convert_markdown: true
