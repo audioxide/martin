@@ -1,0 +1,32 @@
+on:
+  workflow_dispatch:
+  schedule: 
+    - cron: 0 6 * * 1
+jobs:
+  Send-email:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+        working-directory: album-anniversaries
+      - run: npm install -g ts-node
+        working-directory: album-anniversaries
+      - run: ts-node main.ts
+        working-directory: album-anniversaries
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Audioxide album anniversaries
+          to: fred@audioxide.com,andrew@audioxide.com,andre@audioxide.com
+          from: Martin the Deficient Virtual Assistant
+          html_body: file://album-anniversaries/email-content.md
+          convert_markdown: true
