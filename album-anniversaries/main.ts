@@ -33,8 +33,6 @@ const anniversaryAlbumsThisMonth = formatted
   .filter((anniversaryDetails) => anniversaryDetails.qualifiesForAnniversary)
   .sort((a, b) => a.albumAge - b.albumAge);
 
-// console.log(anniversaryAlbumsThisMonth);
-
 fs.writeFile(
   "email-content.md",
   composeEmail(anniversaryAlbumsThisMonth),

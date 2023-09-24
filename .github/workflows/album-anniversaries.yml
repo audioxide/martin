@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
   push:
   schedule: 
-    - cron: 0 6 1 * *
+    - cron: 0 6 * * 1
 jobs:
   Send-email:
     runs-on: ubuntu-latest

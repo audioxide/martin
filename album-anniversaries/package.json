@@ -4,6 +4,6 @@
     "fs": "0.0.1-security"
   },
   "devDependencies": {
-    "@types/node": "^20.6.4"
+    "@types/node": "^20.6.5"
   }
 }
