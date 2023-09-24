@@ -11,7 +11,7 @@ jobs:
       - run: cd album-anniversaries
       - run: npm install
         working-directory: album-anniversaries
-      - run: ts-node main.ts
+      - run: npm install -g ts-node
         working-directory: album-anniversaries
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
