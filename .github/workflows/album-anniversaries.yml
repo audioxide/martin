@@ -1,6 +1,5 @@
 on:
   workflow_dispatch:
-  push:
   schedule: 
     - cron: 0 6 * * 1
 jobs:
@@ -27,7 +26,7 @@ jobs:
           username: ${{secrets.MAIL_USERNAME}}
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Audioxide album anniversaries
-          to: fred@audioxide.com
+          to: fred@audioxide.com,andrew@audioxide.com,andre@audioxide.com
           from: Martin the Deficient Virtual Assistant
           html_body: file://album-anniversaries/email-content.md
           convert_markdown: true
