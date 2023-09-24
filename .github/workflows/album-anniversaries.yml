@@ -10,7 +10,9 @@ jobs:
           node-version: '18'
       - run: cd album-anniversaries
       - run: npm install
+        working-directory: album-anniversaries
       - run: ts-node main.ts
+        working-directory: album-anniversaries
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -23,5 +25,5 @@ jobs:
           to: fred@audioxide.com
           from: Martin the Deficient Virtual Assistant
           body: Hello. I am Martin the Deficient Virtual Assistant. I have been programmed to say I hope you are well.
-          html_body: email.md
+          html_body: album-anniversaries/email.md
           convert_markdown: true
