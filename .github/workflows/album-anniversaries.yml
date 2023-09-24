@@ -1,5 +1,6 @@
 name: Send mail
 uses: dawidd6/action-send-mail@v3
+on: push
 with:
   connection_url: ${{secrets.MAIL_CONNECTION}}
   server_address: smtp.gmail.com
