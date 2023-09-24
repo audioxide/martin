@@ -3,6 +3,14 @@ jobs:
   Send-email:
     runs-on: ubuntu-latest
     steps: 
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: cd album-anniversaries
+      - run: npm install
+      - run: ts-node main.ts
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
         with:
@@ -15,5 +23,5 @@ jobs:
           to: fred@audioxide.com
           from: Martin the Deficient Virtual Assistant
           body: Hello. I am Martin the Deficient Virtual Assistant. I have been programmed to say I hope you are well.
-          # html_body: file://README.html
-          # convert_markdown: true
+          html_body: email.md
+          convert_markdown: true
