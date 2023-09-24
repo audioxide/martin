@@ -25,5 +25,5 @@ jobs:
           to: fred@audioxide.com
           from: Martin the Deficient Virtual Assistant
           body: Hello. I am Martin the Deficient Virtual Assistant. I have been programmed to say I hope you are well.
-          html_body: album-anniversaries/email.md
+          html_body: file:album-anniversaries/email.md
           convert_markdown: true
