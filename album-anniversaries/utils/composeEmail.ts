@@ -10,7 +10,7 @@ export const composeEmail = (
 ) => {
   const variableContent = (anniversaryObjects) => {
     if (anniversaryObjects.length === 0) {
-      return "There are no albums _Audioxide_ has reviewed celebrating an anniversary of note this week.\n";
+      return "And there are no albums _Audioxide_ has reviewed celebrating an anniversary of note this week. Too bad.\n";
     }
     const list = anniversaryObjects.map((album) => {
       return `- [_${album.title}_](${inferLink(
@@ -35,7 +35,7 @@ export const composeEmail = (
   
   Martin here. I have been programmed to say I hope you are well. 
   
-  Today's date is ${todaysDate.toLocaleDateString()}. That means it's time for me to check whether there are any _Audioxide_ album anniversaries coming up this week. The results are in...
+  Today's date is ${todaysDate.toDateString()}. That means it's time for me to check whether there are any _Audioxide_ album anniversaries coming up this week. The results are in...
 
   ${variableContent(anniversaryObjects)}
   That is all. Goodbye.
