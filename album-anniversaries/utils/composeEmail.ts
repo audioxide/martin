@@ -10,7 +10,7 @@ export const composeEmail = (
 ) => {
   const variableContent = (anniversaryObjects) => {
     if (anniversaryObjects.length === 0) {
-      return "And there are no albums _Audioxide_ has reviewed celebrating an anniversary of note this week. Too bad.\n";
+      return "And there are no albums _Audioxide_ has reviewed celebrating an anniversary of note this week. Too bad. Maybe try pulling your finger out and reviewing more albums, you slobs.\n";
     }
     const list = anniversaryObjects.map((album) => {
       return `- [_${album.title}_](${inferLink(
