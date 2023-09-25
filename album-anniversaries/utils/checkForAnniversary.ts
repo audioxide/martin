@@ -1,12 +1,11 @@
-import { AnniversaryObject } from "../types";
-
 export const checkForAnniversary = (
+  todaysDate: Date,
   albumReleaseDate: Date
-): AnniversaryObject => {
+) => {
   const today = new Date();
   const albumAge = today.getFullYear() - albumReleaseDate.getFullYear();
 
-  const getWeek = (date) => {
+  const getWeek = (date: Date) => {
     const janFirst = new Date(date.getFullYear(), 0, 1);
     return Math.ceil(
       ((date.getTime() - janFirst.getTime()) / 86400000 +
@@ -16,12 +15,14 @@ export const checkForAnniversary = (
     );
   };
 
-  const isSameWeek = (dateA, dateB) => {
+  const isSameWeek = (dateA: Date, dateB: Date) => {
     return getWeek(dateA) === getWeek(dateB);
   };
 
   const qualifiesForAnniversary =
-    albumAge % 5 === 0 && albumAge > 0 && isSameWeek(today, albumReleaseDate);
+    albumAge % 5 === 0 &&
+    albumAge > 0 &&
+    isSameWeek(todaysDate, albumReleaseDate);
 
   return {
     albumAge,

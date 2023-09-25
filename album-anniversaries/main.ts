@@ -3,6 +3,8 @@ import { checkForAnniversary } from "./utils/checkForAnniversary";
 import * as fs from "fs";
 import { composeEmail } from "./utils/composeEmail";
 
+const todaysDate = new Date();
+
 const releaseDateJson: {
   number: number;
   title: string;
@@ -23,8 +25,11 @@ const formatted = releaseDateJson.map((album) => {
 });
 
 const anniversaryAlbumsThisMonth = formatted
-  .map((album: { releaseDate: Date; title: any; artist: any }) => {
-    const anniversaryDetails = checkForAnniversary(album.releaseDate);
+  .map((album: { releaseDate: Date; title: string; artist: string }) => {
+    const anniversaryDetails = checkForAnniversary(
+      todaysDate,
+      album.releaseDate
+    );
     return {
       ...album,
       ...anniversaryDetails,
@@ -35,7 +40,7 @@ const anniversaryAlbumsThisMonth = formatted
 
 fs.writeFile(
   "email-content.md",
-  composeEmail(anniversaryAlbumsThisMonth),
+  composeEmail(todaysDate, anniversaryAlbumsThisMonth),
   (err) => {
     if (err) {
       console.log(err);
