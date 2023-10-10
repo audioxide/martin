@@ -1,3 +1,5 @@
+import { formatDateDayMonthYear } from "./formatDate";
+
 export const composeEmail = (
   todaysDate: Date,
   anniversaryObjects: {
@@ -18,7 +20,9 @@ export const composeEmail = (
         album.title
       )}) by ${album.artist} turns ${
         album.albumAge
-      } this week. It was released on ${album.releaseDate.toLocaleDateString()}
+      } this week. It was released on ${formatDateDayMonthYear(
+        album.releaseDate
+      )}
       `;
     });
     return list.join("");
