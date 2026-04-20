@@ -3,7 +3,8 @@
     "target": "es2022",
     "module": "commonjs",
     "resolveJsonModule": true,
-    "esModuleInterop": true
-  },
-  "lib": ["es2017", "dom"]
+    "esModuleInterop": true,
+    "lib": ["es2017", "dom"],
+    "types": ["node"]
+  }
 }

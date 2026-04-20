@@ -41,7 +41,7 @@ const anniversaryAlbumsThisMonth = formatted
 fs.writeFile(
   "email-content.md",
   composeEmail(todaysDate, anniversaryAlbumsThisMonth),
-  (err) => {
+  (err: NodeJS.ErrnoException | null) => {
     if (err) {
       console.log(err);
     }
