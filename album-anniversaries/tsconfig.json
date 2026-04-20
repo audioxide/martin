@@ -4,7 +4,7 @@
     "module": "commonjs",
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["es2017", "dom"],
+    "lib": ["es2021", "dom"],
     "typeRoots": ["./types", "./node_modules/@types"],
     "types": ["node", "convert-csv-to-json"]
   }
